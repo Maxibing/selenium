@@ -1,1 +1,1 @@
-This project is used to learn script for me.
+This project is used to learn selenium.
