@@ -6,7 +6,7 @@ driver = webdriver.Firefox()
 driver.maximize_window()
 driver.implicitly_wait(8)
 
-driver.get("https:www.baidu.com")
+driver.get("https://www.baidu.com")
 time.sleep(2)
 
 try:
