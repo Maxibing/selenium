@@ -16,3 +16,7 @@ except Exception as e:
 	print("Test error", format(e))
 
 driver.quit()
+
+'''
+打开网页，一些可以点击的链接跳转上面的文字，就是link text
+'''
