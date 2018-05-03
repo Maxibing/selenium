@@ -16,3 +16,12 @@ except Exception as e:
 	print("Test error", format(e))
 
 driver.quit()
+
+'''
+此处是百度首页输入框，包括tag name为"form"的代码
+<form name="f" id="form" action="/s" class="fm" onsubmit="javascript:F.call('ps/sug','pssubmit');">
+<span id="s_kw_wrap" class="bg s_ipt_wr quickdelete-wrap">
+	<span class="soutu-btn"></span>
+	<input class="s_ipt" name="wd" id="kw" maxlength="100" autocomplete="off" type="text">
+	......
+'''
