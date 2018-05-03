@@ -1,0 +1,68 @@
+用CSS（即层叠样式表Cascading Stylesheet） Selector来定位（locate）页面上的元素（Elements）。
+
+
+**********************************************************************************************
+如果button上有class属性的，如:
+ <button id="ext-eng=1026" class="x-right-button"...>
+可以这样写：
+css=button.x-right-button
+.代表class
+
+
+**********************************************************************************************
+如果class里带的空格，用.来代替空格如：
+<button class="x-btn-text module_picker_icon">...
+可以这样写：
+css=button.x-btn-text.module_picker_icon
+
+
+**********************************************************************************************
+如果想用别的属性值定位，用方括号【属性名=属性值】的方式，如：
+<abbr>Abc<abbr/>
+css=abbr[title="Abc"]
+
+
+**********************************************************************************************
+如果button上有id属性的，如：
+<input id="ag_name" type="text"...>
+可以这样写：
+css=input#ag_name 
+或者直接写 
+css=#ag_name
+#代表id
+但是在实际应用中，如果有元素固定id的，可以直接用id locator,这样写:
+id=ag_name
+这通常是在Form里的input元素， 需要用户填写内容然后提交的部分，也是最简单的部分。
+
+
+**********************************************************************************************
+没有固定id的，通常是由javascript框架自动生成的id如,每次加载页面都会改变的，如：
+<button id="ext-eng-1026" >，下回可能就是<button id="ext-eng-2047">
+这种情况不能使用id属性来定位。
+
+
+**********************************************************************************************
+如果你想定位一个显示OK的Button，但页面上有几个Button，id是自动生成的，class是一样的，我又想用一个简单点的CSS locator的时候，
+<button id="ext-eng-1026" class="x-right-button">OK</button>
+<button id="ext-eng-1027" class="x-right-button">Cancel</button>
+可以这样写： 
+css=button.x-right-button:contains("OK")
+:contains是个Pseudo-class，用冒号开头，括号里是内容。
+Pseudo-classes是CSS提供的伪类，用来访问页面上DOM tree之外的信息。
+
+
+**********************************************************************************************
+基本上用XPath能定位的元素，都能用CSS Selector定位到。
+它两最相似的是这样写： 
+<table><tr><td><div><span>abcd</span><span>1234</span></div></td></tr></table>
+xpath=//table/tr/td/div/span[1]
+css=table>tr>td>div>span:nth-child(1)
+
+
+**********************************************************************************************
+综上所述，就是:
+有固定id的用id selector， 
+没有固定id的用css selector。 
+Pseudo-selements ：contains()很好用。
+会了这几下子，基本上定位就不成问题了。
+
