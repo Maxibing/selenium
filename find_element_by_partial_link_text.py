@@ -15,7 +15,7 @@ try:
 except Exception as e:
 	print("Test error", format(e))
 
-time.sleep(50
+time.sleep(5)
 driver.quit()
 
 '''
