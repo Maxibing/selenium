@@ -13,4 +13,5 @@ try:
 	print("test id is found")
 except Exception as e:
 	print("Exception found", format(e))
-	
+
+driver.quit()
