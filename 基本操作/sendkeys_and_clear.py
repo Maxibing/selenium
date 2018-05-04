@@ -3,7 +3,7 @@ from selenium import webdriver
 import time
 
 driver = webdriver.Firefox()
-driver.maximize_window
+driver.maximize_window()
 driver.implicitly_wait(8)
 
 driver.get("https://www.baidu.com")
