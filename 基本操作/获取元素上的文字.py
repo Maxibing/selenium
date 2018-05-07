@@ -16,7 +16,7 @@ time.sleep(1)
 driver.find_element_by_xpath("//*[@id='TANGRAM__PSP_10__submit']").click()
 #方法一
 try:
-	driver.find_element_by_xpath("//*[@id='TANGRAM__PSP_10__error' and text()='请您输入手机/邮箱/用户名']").is_displayed()
+	driver.find_element_by_xpath("//*[@id='TANGRAM__PSP_10__error' and text()='请您输入手机/邮箱/用户名']").is_displayed()	#判断元素是否在页面上
 	print("Test pass, error message is displayed.")
 except Exception as e:
 	print("Test fail", format(e))
