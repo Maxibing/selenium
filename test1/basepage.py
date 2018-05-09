@@ -23,12 +23,12 @@ class BasePage(object):
         '''
         self.driver.back()
 
-    def forwad(self):
+    def forward(self):
         '''
         浏览器前进操作
         :return:
         '''
-        self.driver.forwad()
+        self.driver.forward()
 
     def open_url(self,url):
         '''

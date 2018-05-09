@@ -2,7 +2,7 @@
 from selenium import webdriver
 import time
 
-class Baidusearch(object):
+class BaiduSearch(object):
     driver = webdriver.Firefox()
     driver.maximize_window()
     driver.implicitly_wait(8)
@@ -13,7 +13,7 @@ class Baidusearch(object):
 
     def test_search(self, text):
         self.text = text
-        self.driver.find_element_by_xpath("//*[@id='kw']").send_keys(text)
+        self.driver.find_element_by_xpath("//*[@id='kw']").send_keys(self.text)
         time.sleep(1)
         print(self.driver.title)
 
