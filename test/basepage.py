@@ -1,7 +1,7 @@
 #coding=utf-8
 from selenium import webdriver
 
-class BassPage(object):
+class BasePage(object):
     '''
     把selenium中常用的几个方法封装起来
     back()
