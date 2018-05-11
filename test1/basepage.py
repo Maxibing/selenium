@@ -1,5 +1,12 @@
 #coding=utf-8
 from selenium import webdriver
+import os
+import time
+
+from test1.logger import Logger 
+
+mylog = Logger(logger='BasePage').getlog()  
+
 
 class BasePage(object):
     '''
@@ -43,3 +50,17 @@ class BasePage(object):
         :return:
         '''
         self.driver.quit()
+		
+    def screenshot(self):
+        '''
+		截图并保存到Screenshots文件夹下
+		'''
+        file_path = os.path.dirname(os.getcwd()) + '\Screenshots\\'
+        rq = time.strftime('%Y-%m-%d %H:%M:%S')
+        screen_name = file_path + rq + '.png'
+        print(screen_name)
+        try:
+            self.driver.get_screenshot_as_file(screen_name)
+            mylog.info("开始截图并保存")
+        except Exception as e:
+            mylog.error("出现异常", format(e))
